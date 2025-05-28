@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab 8 - JS Effects</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">Lab8</div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#">Головна</a></li>
+        <li><a href="#">Про нас</a></li>
+        <li><a href="#">Послуги</a></li>
+        <li><a href="#">Контакти</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger">&#9776;</button>
+    </nav>
+  </header>
+
+  <section class="carousel-container">
+    <div class="carousel" id="carousel">
+      <div class="slide slide1">Слайд 1</div>
+      <div class="slide slide2">Слайд 2</div>
+      <div class="slide slide3">Слайд 3</div>
+    </div>
+    <div class="controls">
+      <button id="prev">&#10094;</button>
+      <button id="next">&#10095;</button>
+    </div>
+    <div class="indicators" id="indicators"></div>
+  </section>
+
+  <section class="images-large">
+    <img src="https://place-hold.it/200x200?text=Large+1" alt="">
+    <img src="https://place-hold.it/200x200?text=Large+2" alt="">
+  </section>
+
+  <section class="images-medium">
+    <img src="https://place-hold.it/200x200?text=Medium+1" alt="">
+    <img src="https://place-hold.it/200x200?text=Medium+2" alt="">
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
