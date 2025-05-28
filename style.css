@@ -19,25 +19,19 @@ body {
   font-weight: bold;
 }
 
+/* Меню на ПК — горизонтальне і видиме */
 .navbar .nav-links {
   list-style: none;
   display: flex;
   gap: 20px;
-  position: absolute;
-  top: 50px;
-  right: 10px;
-  width: 150px;
-  border-radius: 5px;
-  overflow: hidden;
-  background: #444;
-  flex-direction: column;
-  display: none;
-  z-index: 1003; /* вище за слайдер */
-  animation: slideDown 0.3s ease forwards;
-}
-
-.navbar .nav-links.active {
-  display: flex;
+  position: static; /* звичайне розташування */
+  width: auto;
+  background: none;
+  flex-direction: row;
+  border-radius: 0;
+  overflow: visible;
+  z-index: auto;
+  animation: none;
 }
 
 .navbar .nav-links li a {
@@ -45,6 +39,40 @@ body {
   text-decoration: none;
 }
 
+/* Меню для мобілки — сховане, вертикальне */
+@media (max-width: 767px) {
+  .navbar .nav-links {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    width: 150px;
+    background: #444;
+    flex-direction: column;
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 1003; /* щоб було поверх слайдера */
+    animation: slideDown 0.3s ease forwards;
+  }
+
+  .navbar .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .images-large {
+    display: none;
+  }
+
+  .images-medium {
+    display: flex;
+  }
+}
+
+/* Бургер на ПК прихований */
 .hamburger {
   display: none;
   font-size: 24px;
@@ -138,24 +166,6 @@ body {
   display: none;
   justify-content: center;
   gap: 10px;
-}
-
-@media (max-width: 767px) {
-  .nav-links {
-    /* Вже прописано вище, тому тут можна залишити порожнім або зберегти */
-  }
-
-  .hamburger {
-    display: block;
-  }
-
-  .images-large {
-    display: none;
-  }
-
-  .images-medium {
-    display: flex;
-  }
 }
 
 @keyframes slideDown {
