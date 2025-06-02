@@ -10,8 +10,8 @@ body {
   align-items: center;
   background: #333;
   padding: 10px 20px;
-  position: relative; /* щоб z-index спрацював */
-  z-index: 1002;      /* вище за слайдер */
+  position: relative;
+  z-index: 1002;
 }
 
 .navbar .logo {
@@ -19,12 +19,11 @@ body {
   font-weight: bold;
 }
 
-/* Меню на ПК — горизонтальне і видиме */
 .navbar .nav-links {
   list-style: none;
   display: flex;
   gap: 20px;
-  position: static; /* звичайне розташування */
+  position: static;
   width: auto;
   background: none;
   flex-direction: row;
@@ -39,40 +38,6 @@ body {
   text-decoration: none;
 }
 
-/* Меню для мобілки — сховане, вертикальне */
-@media (max-width: 767px) {
-  .navbar .nav-links {
-    display: none;
-    position: absolute;
-    top: 50px;
-    right: 10px;
-    width: 150px;
-    background: #444;
-    flex-direction: column;
-    border-radius: 5px;
-    overflow: hidden;
-    z-index: 1003; /* щоб було поверх слайдера */
-    animation: slideDown 0.3s ease forwards;
-  }
-
-  .navbar .nav-links.active {
-    display: flex;
-  }
-
-  .hamburger {
-    display: block;
-  }
-
-  .images-large {
-    display: none;
-  }
-
-  .images-medium {
-    display: flex;
-  }
-}
-
-/* Бургер на ПК прихований */
 .hamburger {
   display: none;
   font-size: 24px;
@@ -88,7 +53,7 @@ body {
   overflow: hidden;
   max-width: 800px;
   margin: 20px auto;
-  z-index: 1; /* нижче за меню */
+  z-index: 1;
 }
 
 .carousel {
@@ -98,7 +63,7 @@ body {
 
 .slide {
   min-width: 100%;
-  height: 300px;
+  height: 50vh; /* адаптивніше */
   transition: opacity 0.5s ease;
   display: flex;
   align-items: center;
@@ -130,7 +95,7 @@ body {
 }
 
 .controls button {
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   color: white;
   border: none;
   padding: 10px;
@@ -176,5 +141,38 @@ body {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* ========== МЕДІА ДЛЯ МОБІЛЬНИХ ========== */
+@media (max-width: 767px) {
+  .navbar .nav-links {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    width: 150px;
+    background: #444;
+    flex-direction: column;
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 1003;
+    animation: slideDown 0.3s ease forwards;
+  }
+
+  .navbar .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .images-large {
+    display: none !important;
+  }
+
+  .images-medium {
+    display: flex !important;
   }
 }
