@@ -144,7 +144,6 @@ body {
   }
 }
 
-/* ========== МЕДІА ДЛЯ МОБІЛЬНИХ ========== */
 @media (max-width: 767px) {
   .navbar .nav-links {
     display: none;
